@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "私について";
@@ -30,7 +32,7 @@ const textCase = "uppercase";
     <title>{pageTitle}</title>
     <style define:vars={{skillColor, fontWeight, textCase}}>
       h1 {
-        color: #6B818E;
+        color: #181719;
         font-size: 4rem;
       }
       .skill {
@@ -42,9 +44,7 @@ const textCase = "uppercase";
     </style>
 	</head>
   <body>
-    <a href="/">ホーム</a>
-    <a href="/about/">概要</a>
-    <a href="/blog/">ブログ</a>
+		<Navigation />
 
     <h1>{pageTitle}</h1>
     
@@ -72,5 +72,7 @@ const textCase = "uppercase";
     {finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
     
     {goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
+
+    <Footer />
   </body>
 </html>
